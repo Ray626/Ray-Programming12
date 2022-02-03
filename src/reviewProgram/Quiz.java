@@ -8,14 +8,17 @@ public class Quiz {
     private FileReader fr;
     private BufferedReader br;
     private ArrayList<String[]> questionBank;
+    private ArrayList<String[]> quiz;
+
 
     private int questionAmounts;
 
-    public Quiz(int questionAmounts) throws FileNotFoundException {
+    public Quiz(int questionAmounts, String file) throws FileNotFoundException {
         this.questionAmounts = questionAmounts;
         this.questionBank = new ArrayList<>();
-        fr = new FileReader("Questions.txt");
+        fr = new FileReader(file);
         br = new BufferedReader(fr);
+        quiz = new ArrayList<>();
     }
 
     /**
@@ -23,12 +26,8 @@ public class Quiz {
      */
     public Boolean check(){
 
-        try {
             return (questionBank.size() >= questionAmounts);
-        }
-        catch(Exception e) {
-            return false;
-        }
+
     }
     /**
      * Get the amounts of question in bank
@@ -54,19 +53,19 @@ public class Quiz {
      */
     public void start() throws IOException, InterruptedException {
         read();
-
         if (check()){
-            questionAmounts = questionBank.size()-questionAmounts;
             for (int i = 0; i <questionAmounts;i++){
                 int random = (int)Math.floor(Math.random()*(questionBank.size()-1+1)+0);
+                quiz.add(questionBank.get(random));
                 questionBank.remove(random);
             }
-            for(int i = 0; i < questionBank.size();i++){
-                System.out.println("Question" + (i+1)+ ": "+ questionBank.get(i)[0]);
+            for(int i = 0; i < quiz.size();i++){
+                System.out.println("Question" + (i+1)+ ": "+ quiz.get(i)[0]);
                 System.out.println("Press enter key to show the answer");
                 Scanner flip = new Scanner(System.in);
                 flip.nextLine();
-                System.out.println("Answer: " + questionBank.get(i)[1] + "\n");
+                System.out.println("Answer: " + quiz.get(i)[1] + "\n");
+                System.out.println("+-----------------------------+");
                 Thread.sleep(2000);
             }
         }else{

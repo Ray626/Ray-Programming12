@@ -18,13 +18,25 @@ public class Main {
         questionToBank.toBank();
     }
     static void startQuiz() throws IOException, InterruptedException {
-        Quiz bankCheck=  new Quiz(0);
+        Quiz bankCheck=  new Quiz(0,"Questions.txt");
         System.out.println("select the amounts of questions you want to be in the quiz"+"\n"+"Currently "
                 + bankCheck.bankCheck() + " in the question bank" );
         Scanner questionAmount = new Scanner(System.in);
-        int amount = Integer.parseInt(questionAmount.nextLine());
-        Quiz run = new Quiz(amount);
-        run.start();
+
+        while (true) {
+            try {
+                int amount = Integer.parseInt(questionAmount.nextLine());
+                Quiz run = new Quiz(amount,"Questions.txt");
+                run.start();
+                break;
+            } catch (Exception e) {
+                System.out.println("Input is invalid, enter again");
+                questionAmount = new Scanner(System.in);
+            }
+        }
+
+
+
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
