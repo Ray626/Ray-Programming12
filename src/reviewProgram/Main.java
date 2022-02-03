@@ -36,13 +36,10 @@ public class Main {
             mode = new Scanner(System.in);
             modeC = mode.nextLine();
         }
-        //System.out.println(modeC);
         if (modeC.equals("1")){
             addQToBank();
-        }else if (modeC.equals("2")){
+        }else {
             startQuiz();
-        }else{
-            System.out.println("Input is invalid");
         }
 
 
