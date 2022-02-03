@@ -1,7 +1,7 @@
 package reviewProgram;
 
-import java.io.IOException;
 
+import java.io.IOException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -17,8 +17,36 @@ public class Main {
         Question questionToBank = new Question(question,answer);
         questionToBank.toBank();
     }
+    static void startQuiz() throws IOException, InterruptedException {
+        Quiz bankCheck=  new Quiz(0);
+        System.out.println("select the amounts of questions you want to be in the quiz"+"\n"+"Currently "
+                + bankCheck.bankCheck() + " in the question bank" );
+        Scanner questionAmount = new Scanner(System.in);
+        int amount = Integer.parseInt(questionAmount.nextLine());
+        Quiz run = new Quiz(amount);
+        run.start();
+    }
 
-    public static void main(String[] args) throws IOException {
-        addQToBank();
+    public static void main(String[] args) throws IOException, InterruptedException {
+        System.out.println("Choosing mode"+ "\n"+"1)Adding Questions to question bank  2)flash card" );
+        Scanner mode = new Scanner(System.in);
+        String modeC = mode.nextLine();
+        while((!modeC.equals("1"))&&(!modeC.equals("2"))){
+            System.out.println("Input is invalid");
+            mode = new Scanner(System.in);
+            modeC = mode.nextLine();
+        }
+        //System.out.println(modeC);
+        if (modeC.equals("1")){
+            addQToBank();
+        }else if (modeC.equals("2")){
+            startQuiz();
+        }else{
+            System.out.println("Input is invalid");
+        }
+
+
+
+
     }
 }
