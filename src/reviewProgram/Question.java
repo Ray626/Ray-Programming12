@@ -11,15 +11,16 @@ public class Question {
     private BufferedWriter bw;
 
 
-    public Question(String question, String answer) {
+    public Question(String question, String answer) throws IOException {
         this.question = question;
         this.answer = answer;
+        fw = new FileWriter("Questions.txt",true);
+        bw = new BufferedWriter(fw);
 
     }
 
     public void toBank() throws IOException {
-        fw = new FileWriter("Questions.txt",true);
-        bw = new BufferedWriter(fw);
+
         bw.write(question + "&" + answer + "\n");
         bw.close();
     }

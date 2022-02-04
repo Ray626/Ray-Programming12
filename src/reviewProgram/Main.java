@@ -17,7 +17,7 @@ public class Main {
         Question questionToBank = new Question(question,answer);
         questionToBank.toBank();
     }
-    static void startQuiz() throws IOException, InterruptedException {
+    static void startQuiz() throws IOException {
         Quiz bankCheck=  new Quiz(0,"Questions.txt");
         System.out.println("select the amounts of questions you want to be in the quiz"+"\n"+"Currently "
                 + bankCheck.bankCheck() + " in the question bank" );
@@ -39,7 +39,7 @@ public class Main {
 
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException {
         System.out.println("Choosing mode"+ "\n"+"1)Adding Questions to question bank  2)flash card" );
         Scanner mode = new Scanner(System.in);
         String modeC = mode.nextLine();
