@@ -1,4 +1,4 @@
-package reviewProgram;
+
 
 
 import java.io.IOException;
@@ -20,7 +20,7 @@ public class Main {
     static void startQuiz() throws IOException {
         Quiz bankCheck=  new Quiz(0,"Questions.txt");
         System.out.println("select the amounts of questions you want to be in the quiz"+"\n"+"Currently "
-                + bankCheck.bankCheck() + " in the question bank" );
+                + bankCheck.bankCheck() + "questions in the question bank" );
         Scanner questionAmount = new Scanner(System.in);
 
         while (true) {
