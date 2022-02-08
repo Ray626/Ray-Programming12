@@ -24,7 +24,7 @@ public class Quiz {
     /**
      * This method checks the amounts of question that user what to answer is in the correct range
      */
-    public Boolean check(){
+    public boolean check(){
 
             return (questionBank.size() >= questionAmounts);
 

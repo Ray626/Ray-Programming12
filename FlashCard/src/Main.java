@@ -19,7 +19,6 @@ public class Main {
         System.out.println("select the amounts of questions you want to be in the quiz"+"\n"+"Currently "
                 + bankCheck.bankCheck() + " questions in the question bank" );
         Scanner questionAmount = new Scanner(System.in);
-
         while (true) {
             try {
                 int amount = Integer.parseInt(questionAmount.nextLine());
@@ -31,9 +30,6 @@ public class Main {
                 questionAmount = new Scanner(System.in);
             }
         }
-
-
-
     }
 
     public static void main(String[] args) throws IOException {
