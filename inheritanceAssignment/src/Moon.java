@@ -42,6 +42,14 @@ public class Moon {
     public void setDesignation(String designation) {
         this.designation = designation;
     }
+
+    public boolean equals(Object obj){
+        if(obj instanceof Moon other){
+            return this.designation.equals(other.designation);
+        }else{
+            return false;
+        }
+    }
     public String toString(){
         if (atmosphere){
             return "'" + designation + "' orbit time: " + orbitTime +", atmosphere: existed " ;
