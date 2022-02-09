@@ -55,9 +55,9 @@ public class Planet {
             for (Moon moon : moons) {
                 moonsInfo += moon.toString() + "; ";
             }
-            return "Planet "+ designation + ", orbit time:"+ orbitTime +", moons:" +moonsInfo ;
+            return "Planet: "+ designation + ", orbit time:"+ orbitTime +", moons:" +moonsInfo ;
         }else{
-            return "Planet "+ designation + ", orbit time:"+ orbitTime;
+            return "Planet: "+ designation + ", orbit time:"+ orbitTime;
         }
 
     }

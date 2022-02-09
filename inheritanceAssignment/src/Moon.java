@@ -44,7 +44,7 @@ public class Moon {
     }
     public String toString(){
         if (atmosphere){
-            return "'" + designation + " orbit time: " + orbitTime +", atmosphere: existed'" ;
+            return "'" + designation + "' orbit time: " + orbitTime +", atmosphere: existed " ;
         }else{
             return "'" + designation + "' orbit time: " + orbitTime +"atmosphere: does not existed " ;
         }
