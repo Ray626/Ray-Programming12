@@ -43,6 +43,11 @@ public class Moon {
         this.designation = designation;
     }
     public String toString(){
-        return orbitTime + designation;
+        if (atmosphere){
+            return "'" + designation + " orbit time: " + orbitTime +", atmosphere: existed'" ;
+        }else{
+            return "'" + designation + "' orbit time: " + orbitTime +"atmosphere: does not existed " ;
+        }
+
     }
 }

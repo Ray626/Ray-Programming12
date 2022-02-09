@@ -15,6 +15,9 @@ public class RockPlanet extends Planet{
     }
     @Override
     public String toString(){
-        return super.toString() + String.valueOf(habitable);
+
+        return "Rock " + super.toString() + ", habitable: " + habitable;
+
+
     }
 }

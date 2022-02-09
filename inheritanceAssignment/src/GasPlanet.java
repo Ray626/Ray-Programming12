@@ -27,7 +27,8 @@ public class GasPlanet extends Planet{
     }
     @Override
     public String toString(){
-        return super.toString() + color.toString();
+        String theColor = color.toString().split("Color")[1];
+        return "Gas " + super.toString() + ", " + "color: " + theColor;
     }
 
 

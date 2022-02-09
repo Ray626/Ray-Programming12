@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Planet {
     private int orbitTime;
@@ -27,9 +26,7 @@ public class Planet {
         this.orbitTime = orbitTime;
     }
 
-    public ArrayList<Moon> addMoons() {
-        return moons;
-    }
+    public ArrayList<Moon> getMoons() {return moons;}
 
     public void addMoons(Moon moon) {
         this.moons.add(moon);
@@ -42,6 +39,7 @@ public class Planet {
     public void setDesignation(String designation) {
         this.designation = designation;
     }
+    @Override
     public boolean equals(Object obj){
         if(obj instanceof Planet other){
             return this.designation.equals(other.designation);
@@ -51,6 +49,15 @@ public class Planet {
     }
     @Override
     public String toString(){
-        return orbitTime  + designation  ;
+        if (moons.size() > 0){
+            String moonsInfo = "";
+            for (Moon moon : moons) {
+                moonsInfo += moon.toString() + "; ";
+            }
+            return "Planet "+ designation + ", orbit time:"+ orbitTime +", moons:" +moonsInfo ;
+        }else{
+            return "Planet "+ designation + ", orbit time:"+ orbitTime;
+        }
+
     }
 }
