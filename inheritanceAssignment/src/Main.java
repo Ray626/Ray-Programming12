@@ -2,12 +2,14 @@ import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
-        Planet planet1 = new GasPlanet(5,"one",true, Color.cyan);
+        GasPlanet planet1 = new GasPlanet(4,"one",true, Color.cyan);
         RockPlanet planet2 = new RockPlanet(4,"two",true);
-        Planet planet3 = new RockPlanet(4,"two",true);
-        Planet planet4 = new Planet(4,"one");
+        RockPlanet planet3 = new RockPlanet(4,"one",true);
+        Planet planet4 = new Planet(4,"two");
         Moon moon1 = new Moon(planet1, 5 ,true, "APTX-4869");
         Moon moon2 = new Moon(planet1, 5 ,true, "APTX-4870");
+
+
 
 
 
@@ -16,7 +18,8 @@ public class Main {
         System.out.println(planet2);
         System.out.println(planet2.equals(planet1));
         System.out.println(planet3.equals(planet2));
-        System.out.println(planet1.equals(planet4));
+        System.out.println(planet3.equals(planet1));
+        System.out.println(planet4.equals(planet2));
         System.out.println(moon1);
         System.out.println(moon1.equals(moon2));
         System.out.println(moon1.equals(planet1));

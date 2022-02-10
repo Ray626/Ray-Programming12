@@ -1,0 +1,12 @@
+A  answer:10
+B  answer:27
+C  answer:
+Class A Constructor
+Class B Constructor
+Class C Constructor"
+D answer:
+51
+260
+520
+E answer: 1
+F answer: 200
