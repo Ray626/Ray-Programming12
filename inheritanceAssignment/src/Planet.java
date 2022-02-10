@@ -29,7 +29,7 @@ public class Planet {
 
     public List<Moon> getMoons() {return moons;}
 
-    public void addMoons(Moon moon) {
+    public void addMoon(Moon moon) {
         this.moons.add(moon);
     }
 

@@ -13,7 +13,7 @@ public class Main {
 
 
 
-        planet1.addMoons(moon1);
+        planet1.addMoon(moon1);
         System.out.println(planet1);
         System.out.println(planet2);
         System.out.println(planet2.equals(planet1));
