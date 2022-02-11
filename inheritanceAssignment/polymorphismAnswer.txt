@@ -1,8 +1,27 @@
 1 no
 
 2
-A)ONE
+A)Answer: ONE
+
 B)Answer:
 Class Y
 Class Y
-Class Z
+Error
+C)Answer:
+1
+2
+4
+3
+
+D)Answer:
+4
+2
+1
+
+E)Answer:
+Error
+F)Answer:
+333
+444
+
+
