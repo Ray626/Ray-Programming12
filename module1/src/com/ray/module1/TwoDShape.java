@@ -5,6 +5,12 @@ public abstract class TwoDShape {
     private double height;
     private Colour colour;
 
+    /**
+     * Constructor gets the width and height of a 2D
+     * @param width
+     * @param height
+     * @param colour
+     */
     public TwoDShape(double width, double height,Colour colour) {
         this.width = width;
         this.height = height;

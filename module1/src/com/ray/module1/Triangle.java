@@ -29,8 +29,13 @@ public class Triangle extends TwoDShape implements Rotate{
 
     @Override
     public double getArea(){
-        double s = (side1 + side2 + side3)/2;
-        return Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
+        if(side1!=0){
+            double s = (side1 + side2 + side3)/2;
+            return Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
+        }else{
+            return super.getArea();
+        }
+
     }
 
     public String toString(){
