@@ -1,7 +1,7 @@
-package com.ray.module1;
+package com.ray.module1.section2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class Main {
     public static void main(String[] args) {

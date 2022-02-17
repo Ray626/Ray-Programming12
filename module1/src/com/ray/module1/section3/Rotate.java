@@ -1,4 +1,4 @@
-package com.ray.module1;
+package com.ray.module1.section3;
 
 public interface Rotate {
     void rotate90();

@@ -1,6 +1,7 @@
-package com.ray.module1;
+package com.ray.module1.section4;
 
-public class Triangle extends TwoDShape implements Rotate{
+
+public class Triangle extends TwoDShape implements Rotate {
     private double side1;
     private double side2;
     private double side3;
@@ -11,7 +12,7 @@ public class Triangle extends TwoDShape implements Rotate{
      * @param height > 0
      * @param colour Colour object
      */
-    public Triangle(double width, double height,Colour colour) {
+    public Triangle(double width, double height, Colour colour) {
         super(width, height,colour);
 
     }

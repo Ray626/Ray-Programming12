@@ -1,20 +1,21 @@
-package com.ray.module1;
+package com.ray.module1.section1;
 
-public abstract class TwoDShape {
+
+
+public class TwoDShape {
     private double width;
     private double height;
-    private Colour colour;
+
 
     /**
      * Constructor of the TwoDShape
      * @param width > 0
      * @param height > 0
-     * @param colour Colour object
      */
-    public TwoDShape(double width, double height,Colour colour) {
+    public TwoDShape(double width, double height) {
         this.width = width;
         this.height = height;
-        this.colour = colour;
+
 
     }
 
@@ -24,7 +25,7 @@ public abstract class TwoDShape {
     public TwoDShape() {
         this.width = 0;
         this.height = 0;
-        this.colour = Colour.NONE;
+
     }
 
     /**

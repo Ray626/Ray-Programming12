@@ -1,6 +1,7 @@
-package com.ray.module1;
+package com.ray.module1.section4;
 
-public class Circle extends TwoDShape{
+
+public class Circle extends TwoDShape {
     public final double PI = Math.PI;
     private double radius;
 
