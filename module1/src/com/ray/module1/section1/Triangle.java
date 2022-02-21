@@ -45,7 +45,7 @@ public class Triangle extends TwoDShape  {
     }
 
     /**
-     * get the area of the double
+     * get the area of the triangle
      *
      * @return area
      */

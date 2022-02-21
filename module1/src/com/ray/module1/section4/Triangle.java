@@ -14,6 +14,7 @@ public class Triangle extends TwoDShape implements Rotate {
      */
     public Triangle(double width, double height, Colour colour) {
         super(width, height,colour);
+        side1 = -1;
 
     }
 
@@ -41,16 +42,16 @@ public class Triangle extends TwoDShape implements Rotate {
         return area * 2 / side1;
     }
     /**
-     * get the area of the double
+     * get the area of the triangle
      * @return area
      */
     @Override
     public double getArea(){
-        if(side1!=0){
+        if (side1 != -1){
             double s = (side1 + side2 + side3)/2;
             return Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
-        }else{
-            return super.getArea();
+        }else {
+            return getWidth()*getHeight()/2;
         }
 
     }

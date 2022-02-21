@@ -15,8 +15,6 @@ public class TwoDShape {
     public TwoDShape(double width, double height) {
         this.width = width;
         this.height = height;
-
-
     }
 
     /**

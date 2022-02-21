@@ -32,9 +32,7 @@ public abstract class TwoDShape {
      * Get the area of the 2D shape
      * @return area
      */
-    public double getArea(){
-        return width *height / 2;
-    }
+    public abstract double getArea();
 
     /**
      * Set the height of the 2D shape

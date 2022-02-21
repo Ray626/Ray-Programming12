@@ -16,6 +16,7 @@ public class Triangle extends TwoDShape {
      */
     public Triangle(double width, double height) {
         super(width, height);
+        side1 = -1;
 
     }
 
@@ -35,6 +36,8 @@ public class Triangle extends TwoDShape {
         setWidth(side1);
     }
 
+
+
     /**
      * The method calculates the height of the triangle
      *
@@ -46,17 +49,17 @@ public class Triangle extends TwoDShape {
     }
 
     /**
-     * get the area of the double
+     * get the area of the triangle
      *
      * @return area
      */
     @Override
     public double getArea() {
-        if (side1 != 0) {
-            double s = (side1 + side2 + side3) / 2;
-            return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
-        } else {
-            return super.getArea();
+        if (side1 != -1){
+            double s = (side1 + side2 + side3)/2;
+            return Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
+        }else {
+            return getWidth()*getHeight()/2;
         }
 
     }
