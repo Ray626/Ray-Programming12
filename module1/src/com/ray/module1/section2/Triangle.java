@@ -1,13 +1,9 @@
 package com.ray.module1.section2;
 
-
-
-
 public class Triangle extends TwoDShape {
     private double side1;
     private double side2;
     private double side3;
-
     /**
      * Constructor of the Triangle
      *
@@ -17,9 +13,7 @@ public class Triangle extends TwoDShape {
     public Triangle(double width, double height) {
         super(width, height);
         side1 = -1;
-
     }
-
     /**
      * Constructor of the triangle
      *
@@ -35,22 +29,16 @@ public class Triangle extends TwoDShape {
         setHeight(getHeronsHeight());
         setWidth(side1);
     }
-
-
-
     /**
      * The method calculates the height of the triangle
-     *
      * @return The Height returns is the height of the side 1
      */
     private double getHeronsHeight() {
         double area = getArea();
         return area * 2 / side1;
     }
-
     /**
      * get the area of the triangle
-     *
      * @return area
      */
     @Override
@@ -61,12 +49,9 @@ public class Triangle extends TwoDShape {
         }else {
             return getWidth()*getHeight()/2;
         }
-
     }
-
     /**
      * Return the String description of this triangle.
-     *
      * @return string description
      */
     public String toString() {

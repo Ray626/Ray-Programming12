@@ -4,13 +4,16 @@ package com.ray.module1.section4;
 public class Circle extends TwoDShape {
     public final double PI = Math.PI;
     private double radius;
+    private Colour colour;
 
     /**
      * The constructor of the Circle
      * @param radius > 0
      */
-    public Circle(double radius) {
+    public Circle(double radius,Colour colour) {
         this.radius = radius;
+        this.colour = colour;
+
     }
 
     /**

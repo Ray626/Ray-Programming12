@@ -2,10 +2,8 @@ package com.ray.module1.section2;
 
 import java.util.ArrayList;
 
-
 public class Main {
     public static void main(String[] args) {
-
         ArrayList<TwoDShape> shapes = new ArrayList<>();
         for (int i = 0; i < 10; i++){
             if ((i % 2) == 0){
@@ -18,11 +16,7 @@ public class Main {
                 System.out.println(circle.getArea());
                 System.out.println(circle);
                 shapes.add(circle);
-
-
             }
         }
-
-
     }
 }

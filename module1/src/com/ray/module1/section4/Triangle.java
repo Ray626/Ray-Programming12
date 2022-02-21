@@ -5,6 +5,7 @@ public class Triangle extends TwoDShape implements Rotate {
     private double side1;
     private double side2;
     private double side3;
+    private Colour colour;
 
     /**
      * Constructor of the Triangle
@@ -24,11 +25,12 @@ public class Triangle extends TwoDShape implements Rotate {
      * @param side2 > 0
      * @param side3 > 0
      */
-    public Triangle(double side1, double side2, double side3) {
+    public Triangle(double side1, double side2, double side3, Colour colour) {
 
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
+        this.colour = colour;
         setHeight(getHeronsHeight());
         setWidth(side1);
     }

@@ -1,12 +1,8 @@
 package com.ray.module1.section1;
 
-
-
 public class TwoDShape {
     private double width;
     private double height;
-
-
     /**
      * Constructor of the TwoDShape
      * @param width > 0
@@ -16,7 +12,6 @@ public class TwoDShape {
         this.width = width;
         this.height = height;
     }
-
     /**
      * Default constructor of TwoDShape
      */
@@ -25,7 +20,6 @@ public class TwoDShape {
         this.height = 0;
 
     }
-
     /**
      * Get the area of the 2D shape
      * @return area
@@ -40,29 +34,6 @@ public class TwoDShape {
      */
     public void setHeight(double height) {
         this.height = height;
-    }
-
-    /**
-     * Get the Width of the 2D shape
-     * @return width
-     */
-    public double getWidth() {
-        return width;
-    }
-    /**
-     * Set the Width of the 2D shape
-     * @param  width > 0
-     */
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    /**
-     * Get the height of the 2D shape
-     * @return height
-     */
-    public double getHeight() {
-        return height;
     }
 
 }
