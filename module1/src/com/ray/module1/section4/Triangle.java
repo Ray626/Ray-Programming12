@@ -1,11 +1,14 @@
 package com.ray.module1.section4;
 
 
+import java.util.Locale;
+
 public class Triangle extends TwoDShape implements Rotate {
     private double side1;
     private double side2;
     private double side3;
     private Colour colour;
+    private boolean check = true;
 
     /**
      * Constructor of the Triangle
@@ -15,12 +18,13 @@ public class Triangle extends TwoDShape implements Rotate {
      */
     public Triangle(double width, double height, Colour colour) {
         super(width, height,colour);
-        side1 = -1;
+        check = false;
 
     }
 
     /**
-     * Constructor of the triangle
+     * Constructor of the triangle, the sum of two sides must be greater than
+     * the third side
      * @param side1 > 0
      * @param side2 > 0
      * @param side3 > 0
@@ -49,7 +53,7 @@ public class Triangle extends TwoDShape implements Rotate {
      */
     @Override
     public double getArea(){
-        if (side1 != -1){
+        if (check){
             double s = (side1 + side2 + side3)/2;
             return Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
         }else {
@@ -59,11 +63,24 @@ public class Triangle extends TwoDShape implements Rotate {
     }
 
     /**
+     * test version of get heron's height
+     * @return heron's height
+     */
+    public double testGetHeronsHeight(){
+        return getHeight();
+    }
+
+    /**
      *  Return the String description of this triangle.
      * @return string description
      */
     public String toString(){
-        return "Triangle: " + side1 +"x" +side2 + "x" + side3 +". The area of this triangle are " + getArea();
+        if(check){
+            return "Triangle: " + side1 +"x" +side2 + "x" + side3 +". The area of this triangle are " + getArea() + "Colour: " + colour.toString().toLowerCase(Locale.ROOT) ;
+
+        }else {
+            return "Triangle has width: " + getWidth() + " and height: " + getHeight() + ". The area of this triangle are " + getArea();
+        }
     }
 
     /**

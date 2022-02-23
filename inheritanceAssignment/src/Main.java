@@ -12,7 +12,6 @@ public class Main {
 
 
 
-
         planet1.addMoon(moon1);
         System.out.println(planet1);
         System.out.println(planet2);
