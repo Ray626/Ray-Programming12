@@ -9,7 +9,10 @@ import static org.junit.Assert.*;
 
 public class Module1Test {
     /**
-     * test the getArea method of the triangle class
+     * test the getArea method
+     * Test a and b are testing the getArea method with input width and height
+     * Test c is testing the getArea method with the input of three sides
+     * Test d is testing the getArea method with the input of radius
      */
     @org.junit.Test
     public void getArea() {
@@ -28,6 +31,11 @@ public class Module1Test {
         assertEquals(result4,d.getArea(),0);
 
     }
+
+    /**
+     * test the testGerHeronsHeight method
+     * Test e gets threes side of the triangle and calculates the heronsHeight
+     */
     @org.junit.Test
     public void testGetHeronsHeight(){
         Triangle e = new Triangle(3,4,5,Colour.NONE);
