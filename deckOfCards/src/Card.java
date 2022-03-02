@@ -1,13 +1,13 @@
 public class Card implements Comparable<Card> {
     private final String suit;
     private String face;
-    private final int value;
+    private int value;
 
 
     public Card(String suit, int num) {
         this.suit = suit;
         this.value = num;
-        if (value < 11) {
+        if (value <= 10) {
             this.face = String.valueOf(num);
         } else {
             switch (value) {
@@ -41,20 +41,24 @@ public class Card implements Comparable<Card> {
 
     @Override
     public int compareTo(Card o) {
-        if(this.getSuit().ordinal() > o.getSuit().ordinal()){
+        if(this.getSuit().ordinal() == o.getSuit().ordinal()){
             if (this.value > o.value){
-                return 1;
-            }else if(this.value < o.value){
                 return -1;
+            }else if(this.value < o.value){
+                return 1;
             }else{
                 return 0;
             }
-        }else{
-
+        }else if (this.getSuit().ordinal() > o.getSuit().ordinal()){
+            return 1;
+        }else {
             return -1;
-
         }
 
+    }
+
+    public int getValue(){
+        return value;
     }
 
 
