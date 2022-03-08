@@ -1,15 +1,6 @@
 public class Main {
 
-    static void encrypt(){
-
-    }
-
-    static void decrypt(){
-
-    }
-
-
     public static void main(String[] args) {
-
+        System.out.println(new CaesarCipher("word",26));
     }
 }
