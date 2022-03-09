@@ -13,9 +13,9 @@ public class Main {
         int num = 0;
         while ((line = br.readLine())!= null){
             String[] words = line.split("\\W+");
-            for (int i = 0; i < words.length; i++){
-                if(wordSet.add(words[i].toLowerCase(Locale.ROOT))){
-                    num+=1;
+            for (String word : words) {
+                if (wordSet.add(word.toLowerCase(Locale.ROOT))) {
+                    num += 1;
                 }
             }
         }
