@@ -10,16 +10,20 @@ public class Main {
         BufferedReader br = new BufferedReader(fr);
         HashSet<String> wordSet = new HashSet<>();
         String line;
+        int num = 0;
         while ((line = br.readLine())!= null){
-            String[] words = line.replaceAll("\\p{Punct}","").split("\\s");
+            String[] words = line.split("\\W+");
             for (int i = 0; i < words.length; i++){
-                wordSet.add(words[i].toLowerCase(Locale.ROOT));
+                if(wordSet.add(words[i].toLowerCase(Locale.ROOT))){
+                    num+=1;
+                }
             }
         }
         br.close();
         for(String word : wordSet){
             System.out.println(word);
         }
+        System.out.println(num);
 
 
 
