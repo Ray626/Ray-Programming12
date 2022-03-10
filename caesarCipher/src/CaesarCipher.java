@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Locale;
 
 public class CaesarCipher {
     private final String[] word;
@@ -7,7 +8,8 @@ public class CaesarCipher {
     private final HashMap<String, String>encryptMap = new HashMap<>();
     private final HashMap<String, String>decryptMap = new HashMap<>();
     public CaesarCipher(String word, int shift) {
-        this.word = word.split("");
+
+        this.word = word.toLowerCase(Locale.ROOT).split("");
         this.shift = shift;
         encrypt();
         decrypt();
