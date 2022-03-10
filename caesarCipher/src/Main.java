@@ -1,7 +1,11 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(new CaesarCipher("apple",28).decryptWord());
-        System.out.println(new CaesarCipher("apple", 28));
+        for (int i = 0; i < 26; i++){
+            System.out.println(new CaesarCipher("apple",i));
+            System.out.println(new CaesarCipher("apple",i).encryptWord());
+            System.out.println(new CaesarCipher("apple", i).decryptWord());
+        }
+
     }
 }
