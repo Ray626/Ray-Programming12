@@ -11,7 +11,6 @@ public class CaesarCipher {
         this.shift = shift;
         encrypt();
         decrypt();
-
     }
     private void encrypt(){
         for (int i = 0; i < 26; i++){
@@ -38,7 +37,6 @@ public class CaesarCipher {
         }
         return encryptedWord.toString();
     }
-
     public String decryptWord(){
         StringBuilder decryptedWord = new StringBuilder();
         for (String s : word) {
@@ -46,8 +44,6 @@ public class CaesarCipher {
         }
         return decryptedWord.toString();
     }
-
-
     public String toString(){
         return  "String input: " + String.join("", word) +", Shift: " + shift;
     }
