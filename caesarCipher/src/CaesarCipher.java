@@ -49,9 +49,4 @@ public class CaesarCipher {
     public String toString(){
         return  "String input: " + String.join("", word) +", Shift: " + shift;
     }
-
-
-
-
-
 }
