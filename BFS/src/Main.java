@@ -1,5 +1,3 @@
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -35,6 +33,7 @@ public class Main {
             BFS();
         }
     }
+
     private static void initializeQueue(int num){
         for (Node node : graph){
             if (node.getKey() == num){
@@ -63,4 +62,5 @@ public class Main {
         }
         graph.add(new Node(key, points));
     }
+
 }
