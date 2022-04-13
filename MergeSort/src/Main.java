@@ -1,11 +1,7 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
-
     static int[] merge( int numA, int numB, int[] arrayA, int[] arrayB, int [] arrayC) {
-
         if (arrayC.length == numA + numB) {
             return arrayC;
         }else{
@@ -25,9 +21,7 @@ public class Main {
                 }
             }
         }
-
     }
-
 
     static int[] mergesort(int[] theArray){
         if (theArray.length <=1){
@@ -37,19 +31,19 @@ public class Main {
             int[] arrayA = new int[midpoint];
             int[] arrayB = new int[theArray.length - midpoint];
             System.arraycopy(theArray,0,arrayA,0,midpoint);
-            System.arraycopy(theArray,midpoint,arrayB,0,midpoint);
+            if(theArray.length % 2 == 0){
+                System.arraycopy(theArray,midpoint,arrayB,0,midpoint);
+            }else{
+                System.arraycopy(theArray,midpoint,arrayB,0,midpoint+1);
+            }
             arrayA = mergesort(arrayA);
             arrayB = mergesort(arrayB);
             return merge(0,0,arrayA,arrayB,new int[arrayA.length + arrayB.length]);
-
         }
     }
 
-
-
-
     public static void main(String[] args) {
-        int[] arrayC = {40,60,54,21};
+        int[] arrayC = {40,60,5,54,21,79,21,37,87};
         System.out.println(Arrays.toString(mergesort(arrayC)));
 
 
