@@ -1,3 +1,4 @@
+import java.security.Timestamp;
 import java.util.Arrays;
 
 public class Main {
@@ -15,13 +16,14 @@ public class Main {
                 if(arrayA[numA] > arrayB[numB]){
                     arrayC[numA+numB] = arrayA[numA];
                     return merge(numA+1, numB, arrayA,arrayB,arrayC);
-                }else{
-                    arrayC[numA+numB] = arrayB[numB];
-                    return merge(numA, numB+1, arrayA,arrayB,arrayC);
+                }else {
+                    arrayC[numA + numB] = arrayB[numB];
+                    return merge(numA, numB + 1, arrayA, arrayB, arrayC);
                 }
             }
         }
     }
+
 
     static int[] mergesort(int[] theArray){
         if (theArray.length <=1){
@@ -43,8 +45,18 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int[] arrayC = {40,60,5,54,21,79,21,37,87};
+
+        int[] arrayC = new int[12500];
+
+        for(int i = 0; i <12500; i++){
+            int range = 10000;
+            arrayC[i] = (int)(Math.random() * range);
+        }
+        long start = System.nanoTime();
         System.out.println(Arrays.toString(mergesort(arrayC)));
+
+        System.out.println(System.nanoTime()- start);
+
 
 
 
