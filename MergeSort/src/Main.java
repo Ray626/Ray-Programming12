@@ -15,8 +15,7 @@ public class Main {
             }else if (arrayB.length - 1< numB){
                 arrayC[numA + numB] = arrayA[numA];
                 return merge(numA+1, numB, arrayA,arrayB,arrayC);
-            }
-            else{
+            }else{
                 if(arrayA[numA] > arrayB[numB]){
                     arrayC[numA+numB] = arrayA[numA];
                     return merge(numA+1, numB, arrayA,arrayB,arrayC);
