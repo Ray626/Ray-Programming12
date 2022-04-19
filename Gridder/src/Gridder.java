@@ -679,37 +679,77 @@ public class Gridder extends javax.swing.JFrame
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.out.println("1");
+        int rowNum = (int)(Math.random() * (gridCount-1));
+        for(int c = 0; c < gridCount ; c++){
+            colorSquare(c,rowNum,1);
+        }
         draw();
     }//GEN-LAST:event_jButton1ActionPerformed
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         System.out.println("2");
+        int colNum = (int)(Math.random() * (gridCount-1));
+        for(int r = 0; r < gridCount ; r++){
+            colorSquare(colNum,r,1);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.out.println("3");
+        clearGrid();
+        for(int r = 0; r < gridCount/2;r++){
+            for (int c = 0; c < gridCount; c++){
+                colorSquare(c,r,1);
+            }
+        }
         draw();
     }//GEN-LAST:event_jButton1ActionPerformed
-
-
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("4");
-
+        int whiteSquare = 0;
+        for (int r = 0; r<gridCount; r++){
+            for (int c = 0; c < gridCount; c++){
+                int colorV = grid[c][r];
+                if(colorV == 1){
+                    whiteSquare++;
+                }
+            }
+        }
+        textInfo.setText("Number of white squares: " + whiteSquare);
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("5");
+        clearGrid();
+        int num = 0;
+        for (int r = 0; r < gridCount; r++){
+            if(r <50){
+                colorSquare(num,r,1);
+                int end = gridCount -1 - num;
+                colorSquare(end,r,1);
+                num++;
+            }else {
+                num--;
+                colorSquare(num,r,1);
+                int end = gridCount -1 - num;
+                colorSquare(end,r,1);
 
+            }
+
+        }
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("6");
-
+        for(int r = 0; r < gridCount;r++){
+            for (int c = 0; c < gridCount; c++){
+                int colorNum = grid[c][r] == 0 ? 1 : 0;
+                colorSquare(c,r,colorNum);
+            }
+        }
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("7");
-
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
