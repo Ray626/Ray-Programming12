@@ -750,6 +750,192 @@ public class Gridder extends javax.swing.JFrame
     }//GEN-LAST:event_jButton11ActionPerformed
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("7");
+        int[][] temp = new int[100][100];
+        for (int r1 = 0; r1 < gridCount; r1++){
+            for(int c1 = 0; c1 < gridCount; c1++){
+                temp[c1][r1] = grid[c1][r1];
+                if (temp[c1][r1]==1){
+                }
+            }
+        }
+
+        for (int r = 0; r < gridCount; r++){
+            for (int c = 0; c < gridCount; c++){
+                if (grid[c][r]==0){
+                    if (r==0){
+                        if (c==0){
+                            int num = 0;
+                            if (temp[c+1][r] == 1){
+                                num++;
+                            }
+                            if (temp[c][r+1] == 1){
+                                num++;
+                            }
+                            if (temp[c+1][r+1] == 1){
+                                num++;
+                            }
+                            if (num >=2){
+                                colorSquare(c,r,1);
+                            }
+                        } else if (c == 99) {
+                            int num = 0;
+                            if(temp[c-1][r] == 1){
+                                num++;
+                            }
+                            if (temp[c][r+1] == 1){
+                                num++;
+                            }
+                            if(temp[c-1][r+1] == 1){
+                                num++;
+                            }
+                            if (num >=2){
+                                colorSquare(c,r,1);
+                            }
+                        }else {
+                            int num = 0;
+                            if (temp[c-1][r] == 1){
+                                num++;
+                            }if (temp[c+1][r] == 1){
+                                num++;
+                            }if (temp[c][r+1] == 1){
+                                num++;
+                            }if (temp[c+1][r+1] == 1){
+                                num++;
+                            }if (temp[c-1][r+1] == 1){
+                                num++;
+                            }
+                            if (num >=2){
+                                colorSquare(c,r,1);
+                            }
+                        }
+                    }else if(r==99){
+                        if (c==0){
+                            int num = 0;
+                            if (temp[c+1][r] == 1){
+                                num++;
+                            }
+                            if (temp[c][r-1] == 1){
+
+                                num++;
+                            }
+                            if (temp[c+1][r-1] == 1){
+                                num++;
+                            }
+                            if (num >=2){
+                                System.out.println(c + " " + r);
+                                colorSquare(c,r,1);
+                            }
+                        } else if (c == 99) {
+                            int num = 0;
+                            if(temp[c-1][r] == 1){
+                                num++;
+                            }
+                            if (temp[c][r-1] == 1){
+                                num++;
+                            }
+                            if(temp[c-1][r-1] == 1){
+                                num++;
+                            }
+                            if (num >=2){
+                                System.out.println(c + " " + r);
+                                colorSquare(c,r,1);
+                            }
+
+                        }else {
+                            int num = 0;
+                            if (temp[c+1][r-1] == 1){
+                                num++;
+                            }if (temp[c-1][r-1] == 1){
+                                num++;
+                            }if (temp[c][r-1] == 1){
+                                num++;
+                            }if (temp[c+1][r] == 1){
+                                num++;
+                            }if (temp[c-1][r] == 1){
+                                num++;
+                            }
+                            if (num >=2){
+                                System.out.println(c + " " + r);
+                                colorSquare(c,r,1);
+                            }
+                        }
+                    }else{
+                        if (c==0){
+                            int num = 0;
+                            if (temp[c][r-1] == 1){
+                                num++;
+                            }
+                            if (temp[c][r+1] == 1){
+                                num++;
+                            }
+                            if (temp[c+1][r-1] == 1){
+                                num++;
+                            }
+                            if (temp[c+1][r+1] == 1){
+                                num++;
+                            }
+                            if (temp[c+1][r] == 1){
+                                num++;
+                            }
+                            if (num >=2){
+                                colorSquare(c,r,1);
+                            }
+                        } else if (c == 99) {
+                            int num = 0;
+                            if(temp[c][r+1] == 1){
+                                num++;
+                            }
+                            if (temp[c][r-1] == 1){
+                                num++;
+                            }
+                            if(temp[c-1][r+1] == 1){
+                                num++;
+                            }
+                            if (temp[c-1][r] == 1){
+                                num++;
+                            }
+                            if(temp[c-1][r-1] == 1){
+                                num++;
+                            }
+                            if (num >=2){
+                                colorSquare(c,r,1);
+                            }
+                        }else {
+                            int num = 0;
+                            if (temp[c+1][r+1] == 1){
+
+                                num++;
+                            }if (temp[c+1][r] == 1){
+
+                                num++;
+                            }if (temp[c+1][r-1] == 1){
+
+                                num++;
+                            }if (temp[c][r-1] == 1){
+
+                                num++;
+                            }if (temp[c][r+1] == 1){
+
+                                num++;
+                            }if (temp[c-1][r] == 1){
+
+                                num++;
+                            }if (temp[c-1][r+1] == 1){
+
+                                num++;
+                            }if (temp[c-1][r-1] == 1){
+
+                                num++;
+                            }
+                            if (num >=2){
+
+                                colorSquare(c,r,1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
