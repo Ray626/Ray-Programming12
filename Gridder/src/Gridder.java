@@ -666,6 +666,15 @@ public class Gridder extends javax.swing.JFrame
             jButtonRun.setText("Run...");
         }
     }//GEN-LAST:event_jButtonRunActionPerformed
+    private int[][] createTemp(){
+        int[][] temp = new int[100][100];
+        for (int r = 0; r < gridCount; r++){
+            for(int c = 0; c < gridCount; c++){
+                temp[c][r] = grid[c][r];
+            }
+        }
+        return temp;
+    }
 
     private void jSliderDelayStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSliderDelayStateChanged
         // TODO add your handling code here:
@@ -750,14 +759,7 @@ public class Gridder extends javax.swing.JFrame
     }//GEN-LAST:event_jButton11ActionPerformed
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("7");
-        int[][] temp = new int[100][100];
-        for (int r1 = 0; r1 < gridCount; r1++){
-            for(int c1 = 0; c1 < gridCount; c1++){
-                temp[c1][r1] = grid[c1][r1];
-                if (temp[c1][r1]==1){
-                }
-            }
-        }
+        int[][] temp = createTemp();
 
         for (int r = 0; r < gridCount; r++){
             for (int c = 0; c < gridCount; c++){
@@ -822,7 +824,6 @@ public class Gridder extends javax.swing.JFrame
                                 num++;
                             }
                             if (num >=2){
-                                System.out.println(c + " " + r);
                                 colorSquare(c,r,1);
                             }
                         } else if (c == 99) {
@@ -837,7 +838,6 @@ public class Gridder extends javax.swing.JFrame
                                 num++;
                             }
                             if (num >=2){
-                                System.out.println(c + " " + r);
                                 colorSquare(c,r,1);
                             }
 
@@ -855,7 +855,6 @@ public class Gridder extends javax.swing.JFrame
                                 num++;
                             }
                             if (num >=2){
-                                System.out.println(c + " " + r);
                                 colorSquare(c,r,1);
                             }
                         }
@@ -940,11 +939,41 @@ public class Gridder extends javax.swing.JFrame
     }//GEN-LAST:event_jButton11ActionPerformed
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("8");
+        int[][] temp = createTemp();
+        for(int c = 0; c < gridCount; c++){
+            for (int r = 0; r < gridCount; r++){
+                if(c==0){
+                    colorSquare(c,r,temp[99][r]);
+                }else{
+                    colorSquare(c,r,temp[c-1][r]);
+                }
+            }
+        }
 
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("9");
+        int[][] temp = createTemp();
+
+
+        int num = gridCount +1;
+        for (int r = 0; r < gridCount/2; r++){
+            for (int q = 0; q < 4; q++){
+                num-=2;
+                for(int i = 0; i < num; i++){
+                    if(q ==0){
+                        colorSquare(i,r,temp[num-i][r]);
+
+                    }else if(q == 1){
+                        //colorSquare(num-r,i,);
+                    }
+
+                }
+            }
+
+        }
+
 
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
