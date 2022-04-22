@@ -957,22 +957,27 @@ public class Gridder extends javax.swing.JFrame
         int[][] temp = createTemp();
 
 
-        int num = gridCount +1;
+        int num = gridCount + 1 ;
+        clearGrid();
         for (int r = 0; r < gridCount/2; r++){
+            num -=2;
             for (int q = 0; q < 4; q++){
-                num-=2;
                 for(int i = 0; i < num; i++){
                     if(q ==0){
-                        colorSquare(i,r,temp[num-i][r]);
-
+                        colorSquare(r + i,r,temp[r][gridCount - 1 -r - i]);
                     }else if(q == 1){
-                        //colorSquare(num-r,i,);
+                        colorSquare(gridCount - 1 - r,r+i,temp[r + i][r]);
+                    }else if (q == 2){
+                        colorSquare(gridCount - 1-r-i,gridCount -1 - r, temp[gridCount - 1 -r][r+i]);
+                    }else{
+                        colorSquare(r,gridCount - 1 -r - i,temp[gridCount - 1-r-i][gridCount-1-r]);
                     }
-
                 }
             }
-
         }
+
+
+
 
 
         draw();
