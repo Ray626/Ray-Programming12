@@ -31,12 +31,10 @@ public class Main {
             String abspath = scanner.nextLine();
             dir = new File(abspath);
             List<File> files = (List<File>) FileUtils.listFiles(dir, TrueFileFilter.INSTANCE, TrueFileFilter.INSTANCE);
-
             if (!databaseHandler.checkTableExistence(directory)) {
                 if(databaseHandler.createTable(directory)){
                     for (File file : files) {
                         Path path = Paths.get(file.getAbsolutePath());
-
                         String size = Files.size(path) + " bytes";
                         String ex = "INSERT INTO " + directory + " (filename, path, extension, filesize) VALUES (" +
                                 "'" + file.getName() + "'," +
@@ -48,7 +46,6 @@ public class Main {
                             System.out.println("directory name is invalid (first letter of the directory name can neither be number nor symbol)");
                             check = false;
                             break;
-
                         }
                     }
                 }else {
